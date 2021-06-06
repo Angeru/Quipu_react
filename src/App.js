@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import './App.css';
 
 
@@ -53,19 +52,19 @@ function App() {
           Carga la ultima imagen
         </p>
         
-        <button type="button" className="myButton" onClick={() => today_image()} >
+        <button type="button" data-testid="boton_carga" className="myButton" onClick={() => today_image()} >
           Carga imagen
         </button>
 
-        {url ? <p> <img src={url} /> </p> : <p>Imagen no cargada</p>}
+        {url ? <p> <img data-testid="imagen1" src={url} /> </p> : <p>Imagen no cargada</p>}
 
 
 
 
         Carga una imagen anterior
         <p><input type="text" name="name" onChange={(e)=>setId(e.target.value)}/></p>
-        <button type="button" className="myButton" onClick={() => other_image()} >
-          Carga imagen
+        <button type="button" data-testid="boton_otra_carga" className="myButton" onClick={() => other_image()} >
+          Carga imageen
         </button>
 
         {id}
